@@ -9,9 +9,78 @@
  
 html {
     font-size: 62.5%; 
+    color: #d7dadc;
 }
 
 body {
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-size: 1.4rem;
+    background-color: #1a1a1b;
+    margin: 20px;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: #1a1a1b;
+    border: 1px solid grey;
+    padding: 15px 0;
+    border-radius: 7px;
+}
+
+.side-nav {
+    background-color: #161617;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.votes {
+    text-align: center;
+    margin: 5px;
+}
+
+.bottom-nav {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    font-size: 2rem;
+    color: grey;
+}
+
+.margin {
+    margin-left: 20px;
+}
+
+.main-content {
+    padding: 0 15px;
+}
+
+.heading-postby {
+    font-size: 1.5rem;
+    color: grey;
+}
+
+.heading-main {
+    font-size: 3rem;
+    padding: 5px 0;
+}
+
+a {
+    color:#4cb3f3;
+}
+
+.content {
+    margin: 20px 50px;
+}
+
+.padding-col {
+    padding: 10px 0;
 }
