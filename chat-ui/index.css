@@ -1,0 +1,102 @@
+:root {
+  --color-chat: rgb(242, 243, 247);
+  --color-chat-bubble: rgb(230, 233, 239);
+  --color-viewer-chat-bubble: rgb(76, 148, 254);
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  width: 100%;
+  height: 100%;
+  background: #999;
+}
+
+.chat {
+  /* let's leave these 5 properties alone */
+  border: 1px solid black;
+  width: calc(100% - 64px);
+  height: 400px;
+  background: var(--color-chat);
+  margin: auto;
+
+  /* this allows us to easily left or right justify messages.
+   * This would also make it easy for the messages to stay at the bottom of the container
+   * if there aren't enough messages to scroll
+   */
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Add below */
+
+.messages {
+  /* fill the remaining vertical space, even if the content isn't big enough */
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  /* by default, left-align items and don't make them full width */
+  align-items: flex-start; 
+  overflow-y: scroll;
+}
+
+.messages .viewer {
+  background: var(--color-viewer-chat-bubble);
+  /* right-align */
+  align-self: flex-end; 
+  color: white;
+}
+
+.name {
+  font-weight: 600;
+}
+
+/* select all <div> under .messages  */
+.messages > div {
+  background: var(--color-chat-bubble);
+  padding: 10px;
+  margin: 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.name::after {
+  content: ":"; /* insert a : after the sender's name */
+}
+
+.send {
+  height: 32px;
+  position: relative;
+  display: flex;
+}
+
+.send input {
+  /* grow to take the remaining space */
+  flex-grow: 1; 
+  height: 100%;
+
+  /* Border outline disappears */
+  border: none;
+
+  /* adds padding around placeholder and text */
+  padding: 0 8px;
+  background: none;
+  font-size: 18px;
+}
+.send button {
+  height: 100%;
+  font-size: 18px;
+  padding: 8 px;
+  text-transform: uppercase;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background: none;
+
+  /* animate this attribute when it changes */
+  transition: background 200ms; 
+}
+.send button:hover {
+  background: var(--color-viewer-chat-bubble);
+  color: white;
+  border: 2px solid var(--color-viewer-chat-bubble);
+}
